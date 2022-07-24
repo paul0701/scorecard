@@ -13,6 +13,7 @@
 }
 
 .container {
+    position: relative;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -62,5 +63,9 @@ button {
     cursor: pointer;
 }
 
-
+.new-game {
+    position: absolute;
+    width: 60%;
+    bottom: 0;
+}
 

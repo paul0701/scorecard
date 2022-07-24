@@ -6,32 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basketball scorecard</title>
     <link rel="stylesheet" href="index.css"></link>
-    <script src="index.js"></script>
 </head>
 <body>
 <div class="container">
+<button class="new-game" id="new-game" onclick="resetScore()">New Game</button>
     <div class="home_scoreboard">
-        <h1 class="home_title">HOME</h1>
-        <div class="scoreboard" id="home-score">0
-            
-        </div>
+        <h1 class="home_title" id="home-title">HOME</h1>
+            <div class="scoreboard" id="home-score">0</div>
         <div>
             <button onclick="plusOneHome()">+1</button>
-            <button onclick="plus2home()">+2</button>
-            <button onclick="plus3home()">+3</button>
+            <button onclick="plusTwoHome()">+2</button>
+            <button onclick="plusThreeHome()">+3</button>
         </div>
     </div>
     <div class="away_scoreboard">
-        <h1 class="away_title">GUEST</h1>
-        <div class="scoreboard" id="away-score">
-            <div class="scoreboard_text" >0</div>
-        </div>
+        <h1 class="away_title" id="away-title">GUEST</h1>
+            <div class="scoreboard" id="away-score">0</div>
         <div>
-            <button onclick="plus1guest()">+1</button>
-            <button onclick="plus2guest()">+2</button>
-            <button onclick="plus3guest()">+3</button>
+            <button onclick="plusOneAway()">+1</button>
+            <button onclick="plusTwoAway()">+2</button>
+            <button onclick="plusThreeAway()">+3</button>
         </div>
     </div>
 </div>   
+
+
+<script>
+let homeScoreNumber = 0;
+let awayScoreNumber = 0;
+
+let homeScore = document.getElementById("home-score");
+let awayScore = document.getElementById("away-score");
+
+function plusOneHome() {
+  homeScoreNumber = homeScoreNumber + 1;
+  homeScore.textContent = homeScoreNumber;
+   
+}
+function plusTwoHome() {
+  homeScoreNumber = homeScoreNumber + 2;
+  homeScore.textContent = homeScoreNumber;
+   
+}
+function plusThreeHome() {
+  homeScoreNumber = homeScoreNumber + 3;
+  homeScore.textContent = homeScoreNumber;
+   
+}
+
+function plusOneAway() {
+  awayScoreNumber = awayScoreNumber + 1;
+  awayScore.textContent = awayScoreNumber;
+  
+}
+function plusTwoAway() {
+  awayScoreNumber = awayScoreNumber + 2;
+  awayScore.textContent = awayScoreNumber;
+  
+}
+function plusThreeAway() {
+  awayScoreNumber = awayScoreNumber + 3;
+  awayScore.textContent = awayScoreNumber;
+  
+}
+function resetScore() {
+    document.getElementById("home-score").reset();
+    document.getElementById("away-score").reset();
+
+}
+
+
+</script>
 </body>
 </html>
