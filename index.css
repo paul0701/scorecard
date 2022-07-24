@@ -12,16 +12,20 @@
     src: local('Cursed Timer ULiL'), url('https://fonts.cdnfonts.com/s/40642/CursedTimerUlil-Aznm.woff') format('woff');
 }
 
+html {
+    background: var(--blue);
+}
+
 .container {
     position: relative;
     display: flex;
     justify-content: center;
     flex-direction: row;
     text-align: center;
-    border: solid var(--black);
+    border: solid 5px var(--gray);
     background: var(--blue);
-    width: 50%;
-    height: 60vh;
+    width: 50vw;
+    height: 70vh;
     margin: 0 auto;
 }
 
@@ -66,6 +70,11 @@ button {
 .new-game {
     position: absolute;
     width: 60%;
-    bottom: 0;
+    bottom: 50px;
 }
 
+
+
+@media  screen and (max-width: 450px) {
+   
+}
