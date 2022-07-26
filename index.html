@@ -10,7 +10,8 @@
 <body>
 <div class="container">
 <button class="new-game" id="new-game" onclick="resetScore()">New Game</button>
-    <div class="home_scoreboard">
+<h1 class="game-status" id="game-status"></h1>
+<div class="home_scoreboard">
         <h1 class="home_title" id="home-title">HOME</h1>
             <div class="scoreboard" id="home-score">0</div>
         <div>
@@ -38,52 +39,77 @@ let awayScoreNumber = 0;
 let homeScore = document.getElementById("home-score");
 let awayScore = document.getElementById("away-score");
 let resetScoreBoard = document.getElementById("new-game");
+let gameStatus = document.getElementById("game-status");
+let homeTitle = document.getElementById("home-title");
 
 function resetScore() {
-    let homeScoreNumber = 0;
-    let awayScoreNumber = 0;
+    homeScoreNumber = 0;
+    awayScoreNumber = 0;
     homeScore.textContent = homeScoreNumber;
     awayScore.textContent = awayScoreNumber;
+    gameStatus.textContent = " "
+    leader(awayScoreNumber, homeScoreNumber)
 }
 
 function plusOneHome() {
   homeScoreNumber = homeScoreNumber + 1;
   homeScore.textContent = homeScoreNumber;
-   
+  leader(awayScoreNumber, homeScoreNumber)
 }
 function plusTwoHome() {
   homeScoreNumber = homeScoreNumber + 2;
   homeScore.textContent = homeScoreNumber;
-   
+  leader(awayScoreNumber, homeScoreNumber)
 }
 function plusThreeHome() {
   homeScoreNumber = homeScoreNumber + 3;
   homeScore.textContent = homeScoreNumber;
-   
+  leader(awayScoreNumber, homeScoreNumber)
 }
 
 function plusOneAway() {
   awayScoreNumber = awayScoreNumber + 1;
   awayScore.textContent = awayScoreNumber;
-  
+  leader(awayScoreNumber, homeScoreNumber)
 }
 function plusTwoAway() {
   awayScoreNumber = awayScoreNumber + 2;
   awayScore.textContent = awayScoreNumber;
-  
+  leader(awayScoreNumber, homeScoreNumber)
 }
 function plusThreeAway() {
   awayScoreNumber = awayScoreNumber + 3;
   awayScore.textContent = awayScoreNumber;
-  
+  leader(awayScoreNumber, homeScoreNumber)
 }
 
-// function resetScore() {
-//     let homeScoreNumber = 0;
-//     let awayScoreNumber = 0;
-//     homeScore.textContent = homeScoreNumber;
-//     awayScore.textContent = awayScoreNumber;
-// }
+function leader(awayScoreNumber, homeScoreNumber) {
+
+    if (awayScoreNumber === homeScoreNumber) {
+    document.getElementById("away-score").style.border = "5px solid white";
+    document.getElementById("home-score").style.border = "5px solid white";
+    document.getElementById("game-status").style.fontSize = "70px";
+    document.getElementById("home-title").style.color = "white";
+    document.getElementById("away-title").style.color = "white";
+    gameStatus.textContent = "TIE GAME"
+    } else if (awayScoreNumber > homeScoreNumber) {
+    document.getElementById("away-score").style.border = "5px solid red";
+    document.getElementById("home-score").style.border = "5px solid black";
+    document.getElementById("game-status").style.fontSize = "50px";
+    document.getElementById("away-title").style.color = "red";
+    document.getElementById("home-title").style.color = "white";
+    gameStatus.textContent = "AWAY TEAM HAS THE LEAD"
+    } else if (awayScoreNumber < homeScoreNumber) {
+    document.getElementById("away-score").style.border = "5px solid black";
+    document.getElementById("home-score").style.border = "5px solid red";
+    document.getElementById("game-status").style.fontSize = "50px";
+    document.getElementById("home-title").style.color = "red";
+    document.getElementById("away-title").style.color = "white";
+    gameStatus.textContent = "HOME TEAM HAS THE LEAD"
+    }
+}
+
+
 </script>
 </body>
 </html>

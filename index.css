@@ -25,7 +25,7 @@ html {
     border: solid 5px var(--gray);
     background: var(--blue);
     width: 50vw;
-    height: 70vh;
+    height: 80vh;
     margin: 0 auto;
 }
 
@@ -73,6 +73,22 @@ button {
     bottom: 50px;
 }
 
+.game-status {
+    position: absolute;
+    width: 60%;
+    bottom: 120px;
+    color: var(--white);
+    font-family: "verdana";
+    font-size: 70px;
+    
+}
+
+.buzzer {
+    width: 40px;
+    height: 20px;
+    background-color: #EA4235;
+    border: solid var(--black)
+}
 
 
 @media  screen and (max-width: 450px) {
